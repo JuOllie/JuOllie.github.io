@@ -1,0 +1,257 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>SUKRITI PAUL</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+	</head>
+	<body>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+									<a href="index.html" class="logo"><strong>SUKRITI</strong> PAUL</a>
+									<ul class="icons">
+										<li><a href="https://twitter.com/sukritiollie" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+										<li><a href="https://www.facebook.com/sukriti.paul.5" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+										<li><a href="https://medium.com/@sukritipaul005" class="icon fa-medium"><span class="label">Medium</span></a></li>
+										<li><a href="https://www.linkedin.com/in/sukriti-paul-72a115126/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+									</ul>
+								</header>
+
+							<!-- Banner -->
+								<section id="banner">
+									<div class="content">
+										<header>
+											<h1>A Beginner’s Guide to Installing OpenCV Android in Android Studio</h1>
+										</header>
+
+										
+											<p>Albeit the plethora of resources and documentation pertaining to OpenCV and OpenCV Android, I’ve yet to come across an article which correctly explains something as simple as the integration of OpenCV Android with Android Studio systematically, for newbies. Hence the motive behind compiling such an article. The OpenCV library is aimed at implementing Image Processing and Computer Vision functionalities in real time applications. Yes-it’s open source and it was originally written in C++. You’d be amazed at the ways in which such a library could come handy, especially during a hackathon! </br> <i>P.S. The following steps will help you in integrating the OpenCV library solely, so don’t expect a preprocessed image to pop up at your ImageView magically. We’ll keep that for another day :)</i> </p>
+
+											<h2>Getting Started: The Pre-requisites</h2>
+											Irrespective of the OS that you’re using, you will require the following:
+
+															<ul>
+																<li> If you haven’t installed Java yet, go ahead — install it from the Oracle <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html"> website</a>. Confirm your installation; <b><i>java –version</i></b> does the trick!</li>
+																<li> Download Android Studio <a href="https://developer.android.com/studio/">here</a>.</li>
+																
+															</ul>
+
+											<h2>Setup and Integration: OpenCV for Android</h2>
+											<h3>Step 1: </h3>Download the <a href="https://sourceforge.net/projects/opencvlibrary/files/opencv-android/">OpenCV SDK for Android</a>. 2.4.13 should work fine. Make note of the destination folder- <b><i> OpenCV-android-sdk</i></b> (you will be needing this later). 	
+											<figure>
+												<img src="images/pic07.jpg" alt="" align="middle" class="cent"/>
+												<figcaption align="middle">The OpenCV-android Download Page</figcaption>
+											</figure>
+
+											<h3>Step 2: </h3>  Create a new project. It’s always preferable to select higher API versions as the Minimum SDK, but since my spare phone is old, I’m going to stick with <i>API 21: Android (5.0) Lollipop.</i>
+											</br>
+
+											<h3>Step 3: </h3>  Import the OpenCV Module. Go to <b><i>File -> New -> Import Module</i></b>. This is where your destination folder comes into play. My <i>OpenCV-android-sdk</i> folder is in Downloads, so that’s exactly where I’m headed! Select the Source Directory path to the <b><i>sdk/java folder</i></b> (If the download goes well, you WILL have this folder in the <i>OpenCV-android-sdk</i> folder ).Here are some screenshots that will give you more clarity. </br>
+
+											<figure>
+												<img src="images/pic08.jpg" alt="" align="middle" class="cent1"/>
+												<figcaption align="middle">The Import Module Option</figcaption>
+											</figure>
+
+											<figure>
+												<img src="images/pic09.jpg" alt="" align="middle" class="cent1"/>
+												<figcaption align="middle">Selecting the sdk/java Folder</figcaption>
+											</figure>
+											<figure>
+												<img src="images/pic16.jpg" alt="" align="middle" class="cent1"/>
+												<figcaption align="middle">The Source Directory</figcaption>
+											</figure>
+
+											<h3>Step 4: </h3>A <b>Gradle project sync error</b>! Now what? If things go berserk at this step, it’s completely NORMAL because the Gradle script of your app and of OpenCV do not match! Let’s get that right, before proceeding. </br>
+											<figure>
+												<img src="images/pic17.jpg" alt="" class="cent1" />
+												<figcaption align="middle">The ‘OMG What Did I Just Do’ Scenario</figcaption>
+											</figure>
+
+											
+											Now here’s the confusing bit- there are so many .gradle files, which one should you be choosing?Select <b> <i> Project</i></b> from the dropdown at the top of the <b><i>Project</i></b> window (this will help you in viewing your project structure).<b>You need to match the following between the <i>build.gradle</i> under the app folder and the <i>build.gradle</i> of the openCVLibrary folder:</b>
+
+
+												</br>
+
+															<ul>
+																<li> <b><i>compileSdkVersion</i></b></li>
+																<li> <b> <i>buildToolsVersion</i></b></li>
+																<li> <b> <i>minSdkVersion</i></b></li>
+																<li> <b> <i>targetSdkVersion</i></b></li>
+																
+											
+															</ul>
+											Alter the build.gradle of the OpenCV Library and modify it to the values of these parameters in the build.gradle of the app. <b>Do NOT tamper with the <i>build.gradle</i> of the app.</b> </br></br>
+
+
+											<figure>
+												<img src="images/pic18.jpg" alt="" align="middle" class="cent1"/>
+												<figcaption align="middle">build.gradle files of the App and the OpenCVLibrary</figcaption>
+											</figure>
+
+											<h3>Step 5: </h3> Adding the OpenCV Module Dependencies.Right click the app module as shown and proceed by clicking on Open Module Settings.Under <i>Dependencies</i>, choose the ‘+’ sign and select the option called Module Dependency. You will see the <b><i>OpenCVLibrary module</i></b>, click on OK after choosing it.
+
+
+											<figure>
+												<img src="images/pic19.jpg" alt="" align="middle" class="cent1"/>
+												<figcaption align="middle">The Open Module Settings Option</figcaption>
+											</figure>	
+
+											<figure>
+												<img src="images/pic20.jpg" alt="" align="middle" class="cent1"/>
+												<figcaption align="middle">Selecting the OpenCVLibrary Module</figcaption>
+											</figure>	
+											</br>		
+
+											Just a few more steps and you’re almost good to go!
+										</br>
+											<h3>Step 6: </h3>Remember how I’d mentioned about keeping the OpenCV-android-sdk destination path in mind? Here’s where you’ll need it yet again. <b>The libs folder present in <i>OpenCV-android-sdk/sdk/native</i> has to be COPIED to the <i>app/src/main</i> folder of your Android project.</b> </br>
+
+											<h3>Step 7: </h3>Don’t close that window yet! <b>RENAME the copied <i>libs</i> folder to <i>jniLibs</i>.</b> Build your app- it should work fine! </br>
+
+											<h3>Step 8: </h3>Running the App on your Android Device.You must be wondering how OpenCV applications work on an Android phone.<b>OpenCV Manager</b> beautifully handles it all! I don’t recommend testing the app via an emulator. Use an actual Android device in such a scenario. <b>You CANNOT run it on your phone without this</b>.
+
+											<figure>
+												<img src="images/pic21.jpg" alt="" align="middle" class="cent"/>
+												<figcaption align="middle">The OpenCV Manager available at the Google Play Store</figcaption>
+											</figure>
+											If your app runs without crashing and you have no errors, give yourself a huge pat.Viola!
+
+											<i>Note: This was my first attempt at writing a technical article for Medium so any suggestion would be appreciated :)</i>
+											</br>
+										</br>
+											<a href="interblog.html" class="button special">Return</a>
+										
+									</div>
+								</section>
+
+							<!-- Section -->
+								
+
+							<!-- Section -->
+								<section>
+									
+								</section>
+
+						</div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar">
+						<div class="inner">
+
+							<!-- Search -->
+								<section id="search" class="alt">
+									<form method="post" action="#">
+										<input type="text" name="query" id="query" placeholder="Search" />
+									</form>
+								</section>
+
+							<!-- Menu -->
+								<nav id="menu">
+									<header class="major">
+										<h2>Menu</h2>
+									</header>
+									<ul>
+										<li><a href="index.html">Homepage</a></li>
+										<li><a href="generic.html">Generic</a></li>
+										<li><a href="elements.html">Elements</a></li>
+										<li>
+											<span class="opener">Submenu</span>
+											<ul>
+												<li><a href="#">Lorem Dolor</a></li>
+												<li><a href="#">Ipsum Adipiscing</a></li>
+												<li><a href="#">Tempus Magna</a></li>
+												<li><a href="#">Feugiat Veroeros</a></li>
+											</ul>
+										</li>
+										<li><a href="#">Etiam Dolore</a></li>
+										<li><a href="#">Adipiscing</a></li>
+										<li>
+											<span class="opener">Another Submenu</span>
+											<ul>
+												<li><a href="#">Lorem Dolor</a></li>
+												<li><a href="#">Ipsum Adipiscing</a></li>
+												<li><a href="#">Tempus Magna</a></li>
+												<li><a href="#">Feugiat Veroeros</a></li>
+											</ul>
+										</li>
+										<li><a href="#">Maximus Erat</a></li>
+										<li><a href="#">Sapien Mauris</a></li>
+										<li><a href="#">Amet Lacinia</a></li>
+									</ul>
+								</nav>
+
+							<!-- Section -->
+								<section>
+									<header class="major">
+										<h2>Ante interdum</h2>
+									</header>
+									<div class="mini-posts">
+										<article>
+											<a href="#" class="image"><img src="images/pic07.jpg" alt="" /></a>
+											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="images/pic08.jpg" alt="" /></a>
+											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="images/pic09.jpg" alt="" /></a>
+											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
+										</article>
+									</div>
+									<ul class="actions">
+										<li><a href="#" class="button">More</a></li>
+									</ul>
+								</section>
+
+							<!-- Section -->
+								<section>
+									<header class="major">
+										<h2>Get in Touch</h2>
+									</header>
+									<p>Feel free to contact me!</p>
+									<ul class="contact">
+										<li class="fa-envelope-o"><a href="#">sukritipaul005@gmail.com</a></li>
+			
+									</ul>
+								</section>
+
+							<!-- Footer -->
+								<footer id="footer">
+									<p class="copyright">&copy; Made by Sukriti </br> Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+								</footer>
+
+						</div>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
