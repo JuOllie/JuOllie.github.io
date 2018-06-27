@@ -1,0 +1,267 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>SUKRITI PAUL</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+	</head>
+	<body>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+									<a href="index.html" class="logo"><strong>SUKRITI</strong> PAUL</a>
+									<ul class="icons">
+										<li><a href="https://twitter.com/sukritiollie" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+										<li><a href="https://www.facebook.com/sukriti.paul.5" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+										<li><a href="https://medium.com/@sukritipaul005" class="icon fa-medium"><span class="label">Medium</span></a></li>
+										<li><a href="https://www.linkedin.com/in/sukriti-paul-72a115126/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+									</ul>
+								</header>
+
+							<!-- Banner -->
+								<section id="banner">
+									<div class="content">
+										<header>
+											<h1>An IISc Lecture: Deep Learning Research- Representation Learning</h1>
+										</header>
+
+											<figure>
+												<img src="images/pic42.jpg" alt="" align="middle" class="cent2" height="300px" />
+												<figcaption align="middle">Fig.1 : Explainable AI</figcaption>
+											</figure>
+
+											In his hour long lecture pertaining to cutting-edge research in deep learning(DL), Professor <a href="https://cedar.buffalo.edu/~srihari/">Sargur Narasimhamurthy Srihari </a> touched upon various topics including <i>the significance of representation, representation learning methods, transfer learning, disentangling variables and explainable artificial intelligence (AI)</i>. Prof. Srihari is a SUNY Distinguished Professor in the Department of Computer Science and Engineering at the University at Buffalo. A pioneering researcher, his research efforts have resulted in the first large-scale handwritten address interpretation systems in the world (deployed by the IRS and USPS), post-Daubert court acceptance of handwriting testimony based on handwriting individuality assessment, a software system in use by forensic document examiners worldwide, statistical characterization of uncertainty in impression evidence and first characterization of document image analysis as a sub-field of pattern recognition. I strive to highlight important points of the session.
+											</br> </br> <i>Note: Most of the images have been taken from sir’s lecture slides and are available on his website.</i></br></br> 
+
+											<h2>The Importance of Representations</h2>
+											<figure>
+												<img src="images/pic44.jpg" alt="" align="middle" class="cent2" height="300px" />
+												<figcaption align="middle">Fig.2 : Changing the coordinate system for a given data-set</figcaption>
+											</figure>
+											<p>Synonymous with the concept of having different metrics to measure distances (like miles and km), having good representations for our problem statements are vital for enhanced and effective learning. You must be wondering how representations matter to a computer science student. Via a simple example of inserting a number in a sorted list versus inserting a number into a list which is represented as a red-black tree, it can be shown that the complexity varies significantly. <i>The former has a complexity of O(n), whereas the complexity of the latter is O(log n).</i></p>
+
+
+											<p>But what has this got to do with machine learning (ML)? Is there an ML-centric example which depicts the importance of representations? Fig.2 depicts how changing the coordinate system ((x,y)->(r,θ)), can influence the ease with which classification is performed. In the second case, a linear classifier can be used effectively. <i>Representations should be disentangled, noise invariant, informative and uncomplicated</i> (when it comes to working with them). Representations do matter- we aim at learning representations after all! </p>
+
+											<h3>Role Played by Deep Learning When it Comes to Representations</h3>
+											To cut things short, <b>deep learning finds representations.</b> The dark regions imply that the corresponding components can learn from data. Extending the concept of representation learning to multiple layers gives rise to deep learning frameworks, as shown below (Fig.3). </br></br>
+
+											<figure>
+												<img src="images/pic43.jpg" alt="" align="middle" class="cent2" height="300px" />
+												<figcaption align="middle">Fig.3: Representation Learning</figcaption>
+											</figure> 
+											</br>
+											<p>
+											If you’re a deep learning enthusiast, it is plausible that you’re au fait with the next few topics. But that’s not why I’ve penned down my learnings; this article doesn’t focus on brushing up your basics or going into the nitty gritties. It’s more about facts, clearing ambiguities and discussing current research work.</p> 
+
+											Representation learning methods comprise the following:
+											<ul>
+												<li>Autoencoders</li>
+												<li>Convolutional Neural Networks (CNN)</li>
+												<li>Recurrent Neural Networks (RNN)</li>
+											</ul>
+
+											<h2>Autoencoders</h2>
+											<figure>
+												<img src="images/pic45.jpg" alt="" align="middle" class="cent2" height="300px" />
+												<figcaption align="middle">Fig.4: An autoencoder <a href="https://www.researchgate.net/publication/320658590_Deep_Clustering_with_Convolutional_Autoencoders">(Deep Clustering with Convolutional Autoencoders)</a></figcaption>
+											</figure>
+											</br>
+											
+											Autoencoders are unsupervised learning algorithms. The following facts hold true for <b>deterministic</b> autoencoders. Encoders are designed to obtain <b>compressed and highly informative</b> representations of the input. Compressed forms hold relevant information and data properties pertaining to the task . Decoders are expanded/converted to reconstruct the input. Sparse autoencoders penalize the compressed representations (in the hidden layer), via a sparsity penalty.
+											</br></br>
+											<blockquote>“The model is forced to prioritize which aspects of input are copied”.</blockquote>
+
+											<figure>
+												<img src="images/pic46.jpg" alt="" align="middle" class="cent2" height="300px" />
+												<figcaption align="middle">Fig.5: An example of a 1-D manifold</figcaption>
+											</figure>
+
+											</br>
+											Another notable fact would be that <b><i>autoencoders learn manifolds</i>.</b> In layman’s terms, imagine a manifold to be a subset of the vector space (ambient space) of the original data i.e. a <b><i>low dimensional space</i></b> associated with the compressed representation.<b><i>A manifold can have several dimensions</i>.</b><b> An interesting observation would be that any atypical behaviour can be observed if the input is not on the manifold.</b> Essentially, a manifold can be perceived as a projection onto a lower dimensional space (which is why sir has quoted an example of PCA).An embedding is a low dimensional vector or a point on the manifold. Fig.6 depicts embeddings on a manifold of familiar classes.
+											</br></br>
+
+											<blockquote>“Autoencoders learn a representation function that maps any point in ambient space to its embedding”.</blockquote>
+
+											<figure>
+												<img src="images/pic47.jpg" alt="" align="middle" class="cent2" height="300px" />
+												<figcaption align="middle">Fig.6: Embedding on a manifold</figcaption>
+											</figure>
+
+										</br>
+											<h3>How is the compression different from JPEG or Mp3 compression and how do we harness the power of these representations?</h3>
+											<figure>
+												<img src="images/pic48.jpg" alt="" align="middle" class="cent2" height="300px" />
+												<figcaption align="middle">Fig.7: Deepstyle example</figcaption>
+											</figure>
+											<br>
+											Autoencoders are <b><i>lossy and learnt.</i></b> Furthermore, <i><b>the intermediate compressed representations can be modified in the encoded space, to obtain outputs that have never encountered.</b></i><b> <a href="https://arxiv.org/pdf/1801.03002.pdf">DeepStyle</a> </b>is an example of the same.
+
+											<blockquote>“Using one input image and changing values along different dimensions of feature space you can see how the generated image changes (patterning, color texture) in style space.”</blockquote>
+
+											Another instance where compression can play an important role is in the case of analyzing tweets; a researcher is known to have analyzed 198 billion tweets with 2.8 billion words in the training set where a 30,000 dimensional One hot vector can be represented by a compressed vector of 300 dimensions (rich with information). A recent paper termed, ‘<b>Embedding Historical Linguistics Data</b>’ makes use of words shared across various languages to obtain a hyperbolic geometry (in the compressed form) as shown in Fig.9. This is an ICML’18 proceeding.
+											<figure>
+												<img src="images/pic49.jpg" alt="" align="middle" class="cent2" height="300px" />
+												<figcaption align="middle">Fig.9: Embedding Historical Linguistics Data</figcaption>
+											</figure> </br>
+
+											<h2>The Underlying Concept Behind CNNs</h2>
+											<h3>Understanding Sparse Connectivity</h3>
+											Sparse interactions are a <b><i>consequence of the kernel size being smaller than the input image size.</i></b> For simplicity sake, imagine a hidden unit in layer L , as the input to the hidden units in layer L+1. In a traditional feed forward neural network, the current hidden unit will serve as an input to<b> ALL the hidden units of layer L+1 </b>(unless you apply dropout regularization). The crux in designing CNNs, lies in the fact that the <b><i>current hidden unit will impact or effect only k hidden units of layer L+1,</i></b>  where k is the kernel size. Thus, this is an implication of sparse connectedness.</br></br>
+
+											<h3>CNNs and Matrix Multiplication</h3>
+											<figure>
+												<img src="images/pic50.jpg" alt="" align="middle" class="cent2" height="300px" />
+												<figcaption align="middle">Fig.10: CNNs vs Matrix Multiplication</figcaption>
+											</figure></br>
+
+											<h2>Computational Graphs for RNNs</h2>
+
+											Operations associated with CNNs are <b>not 1–1 with mathematical convolution</b>, owing to sparsity. CNNs ignore the effects of one layer on another. Fig.10 represents CNNs versus traditional matrix multiplication. The shaded regions s_x correspond to the units that are impacted by x_3. </br></br>
+
+											<figure>
+												<img src="images/pic51.jpg" alt="" align="middle" class="cent2" height="300px" />
+												<figcaption align="middle">Fig.11: RNN-Unfolding a graph</figcaption>
+											</figure> </br>
+
+											An RNN can be perceived as an <b><i>unfolded form of a graph of RNN, over various time instances.</i></b> Fig.11 represents how a single computational graph can be replicated over several time instances. Cycles signify how the current value of a variable impacts its future value, at a particular time step.<i> Let us assume that a person discusses about Kalman filters, what she ate for breakfast and returns to the topic of Kalman filters. Although she has made a connection of her references to something that she quoted earlier, how does a system correlate current context with prior information ? </i><b> Contextual information is pivotal in such a scenario and the concept of ‘larger memory over a longer time’, is sacrosanct in such NLP related tasks.</b> This gave rise to <b><i>LSTMs</i></b> where the <i>cell state or conveyor belt</i> is crucial in transferring previous information.</br></br>
+
+											<h2>Transfer Learning</h2>
+											If you’re a newbie to DL or if you don’t have the required hardware to train deep networks, this is an ideal first assignment! We use transfer learning when:
+											<ul>
+												<li>Two or more tasks have to be performed.</li>
+												<li>We can safely assume that the factors describing the variations in task X , are relevant to the variations that are to be considered for learning task Y.</li>
+											</ul>
+
+											For example, a DL framework designed for the recognition of handwritten English numerals, can be used for Indic script numeral recognition. Transfer learning is characterised by <i>shared representations</i> and is known to improve the performance of DNNs.</br></br>
+
+											<h2>Understanding an Optimal Representation for ML</h2>
+											A good representation will make the classification task easier as we progress through successive layers. It is plausible that classes which are not linearly separable in input features, become linearly separable in the final layer. <i><b>The entire task can be viewed as learning a single function f(x)</b></i>, which comprises functions like f(1), f(2) and f(3). <b><i>At each stage of solving for f(x), the classification becomes easier, ideally.</i></b></br></br>
+											f (x)= f (3) [ f (2) [ f (1)(x)]]</br></br>
+											<blockquote>“An ideal representation is one that disentangles the underlying causal factors of variation that generated the data, especially those that are relevant to our application. Most strategies for representation learning are based on introducing clues that help the learning to find these underlying factors of variation.”</blockquote>
+
+											<h2>Latest Buzz</h2>
+											There are a few more concepts that I will be covering in subsequent blog articles. Here are a few ongoing areas of research in DL, that you could explore.</br></br>
+											<ol>
+												<li><b><i>Disentangling or Untangling Variables.</i></b></li></br>
+												<li><b><i>Semantic Manifold and Manifold Learning </i></b>: Prof. Sargur used an example of handwritten text to obtain images which were generated from a manifold. The core idea behind this was to travel along a dimension in latent(hidden) space, ensuring that the other dimensions wereunaltered. His PhD students are working on deep learning for handwritten comparison; unfortunately, its details are unavailable as it’s an ongoing project using variational autoencoders for forensic comparison. Incase you’re interested in handwritten recognition, give <a href="https://cedar.buffalo.edu/papers/articles/Individuality_Handwriting_2002.pdf">this</a> a read .</li></br>
+												<li><b><i>Capsule Networks</i></b> : It’s rather ironical that <a href="https://www.youtube.com/watch?v=rTawFwUvnLE">Geoffrey Hinton expresses his dismay</a> in using CNNs, stating that the pooling operation is a blunder and its apt working could be cataclysmic for the DL community. Recently, he proposed <b>CapsNet</b> to overcome the drawbacks held by CNNs. <a href="https://medium.com/ai%C2%B3-theory-practice-business/understanding-hintons-capsule-networks-part-i-intuition-b4b559d1159b">Here’s</a> a concise blog article regarding the same. (I was introduced to this, by a friend).</li></br>
+												<li><b><i>Explainable Artificial Intelligence:</i></b> Ever wondered why the answer given by a DNN, is the answer? The algorithm certainly isn’t the answer and it’s high time we contemplate something that is in-between the input and the output. Researchers are working at incorporating an <b><i>explanation interface</i></b> (as shown in Fig.1) to the learning system. This will help in answering some of the following questions:</li>
+												<ul>
+													<li>Why was X performed?</li>
+													<li>Why wasn’t Y or any other method performed?</li>
+													<li>What are the scenarios where this will be correct (or incorrect)?</li>
+													<li>How can mistakes pertaining to X be corrected?</li>
+													<li>When can we trust this? (If you’re working on detecting malignancy in images or deciding the execution of a criminal, errors are unacceptable).</li>
+													<li>Will this cheat, in any scenario? (For example, a recent experiment associated with recognizing horses, worked incorrectly despite optimal results, as each of the input images pertaining to horses had a copyright symbol. The classifier used the copyright symbol as an implication of a horse :P).</li>
+												</ul>
+												<blockquote>“Most of AI is a black-box when it comes to learning”.</blockquote>
+											<li><b>Extending concepts of Variational Autoencoders (VAE) and Generative adversarial networks (GANs) to explainable AI.</b></li>	
+											</ol>
+											
+											<h2>Open-ended Questions by the Audience</h2>
+											<ol>
+												<li>Does explainable AI aim at improving existing frameworks or is it a new and unconventional approach altogether?</li>
+												<li>As representation learning advances, feature representations will change. Can the current DL models handle this? (Apparently Kalman filters and LSTMs can handle this).</li>
+												<li>Will there be a point where DL beats classical ML in all scenarios?</li>
+												<li>Can transfer learning be conceived as a regularizer?</li>
+											</ol>
+											<i>Note: This is an overview of the seminar. I shall post a few more articles in detail. None of the above-mentioned facts are my findings; I have merely jotted down points that were discussed in the lecture. Feel free to correct me or add a few more ongoing research areas in DL (there are a plethora of them, by now) :)</i>
+
+											
+										</br></br>
+											<a href="interblog.html" class="button special">Return</a>
+										
+									</div>
+								</section>
+
+							<!-- Section -->
+								
+
+							<!-- Section -->
+								<section>
+									
+								</section>
+
+						</div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar">
+						<div class="inner">
+
+							<!-- Search -->
+								<section id="search" class="alt">
+									<form method="post" action="#">
+										<input type="text" name="query" id="query" placeholder="Search" />
+									</form>
+								</section>
+
+							<!-- Menu -->
+								<nav id="menu">
+									<header class="major">
+										<h2>Menu</h2>
+									</header>
+									<ul>
+										<li><a href="index.html">About Me</a></li>
+										<li><a href="index2.html">Explore</a></li>
+										<li>
+											<span class="opener">Technical Endeavours</span>
+											<ul>
+												<li><a href="interblog.html">Personal Blog</a></li>
+											</ul>
+										</li>
+										<li><a href="myvid.html">Gallery</a></li>
+										<li><a href="mygallery.html">Videos</a></li>
+										
+									</ul>
+								</nav>
+
+							
+							<!-- Section -->
+								<section>
+									<header class="major">
+										<h2>Get in Touch</h2>
+									</header>
+									<p>Feel free to contact me!</p>
+									<ul class="contact">
+										<li class="fa-envelope-o"><a href="#">sukritipaul005@gmail.com</a></li>
+			
+									</ul>
+								</section>
+
+							<!-- Footer -->
+								<footer id="footer">
+									<p class="copyright">&copy; Made by Sukriti </br> Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+								</footer>
+
+						</div>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
