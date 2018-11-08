@@ -12,15 +12,17 @@ var getAll = function (selector, scope) {
 // setup typewriter effect in the terminal demo
 if (document.getElementsByClassName('demo').length > 0) {
   var i = 0;
-  var txt = `scribbler
-            [Entry mode; press Ctrl+D to save and quit; press Ctrl+C to quit without saving]
+  var txt = `outreach
 
-            ###todo for new year dinner party
+            ###todo with course-work
 
-            - milk
-            - butter
-            - green onion
-            - lots and lots of kiwis 🥝`;
+            - Manage Technical Clubs (IECSE, Google Developers Group Manipal)
+            - Diversity Initives (Women Techmakers, ACM Women Manipal)
+            - Social Service (Divine Mercy School, India Forward & WISE)
+            - Provide Mentorship (MuSoC, Rethink, Learn IT, Girl!)
+            - Volunteer (ICACCI'17, GHC'18)
+
+            Find out more below `;
   var speed = 60;
 
   function typeItOut () {
